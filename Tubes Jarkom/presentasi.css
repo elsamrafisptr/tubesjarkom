@@ -1,0 +1,241 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+	background: linear-gradient(226.79deg, rgba(42, 98, 143, 0.75) -0.93%, rgba(62, 146, 204, 0.75) 40.57%, rgba(62, 146, 204, 0) 118%);
+	background-repeat: no-repeat;
+	font-family: 'Inter', sans-serif;
+}
+
+/* navbar start */
+.navbar-container {
+	background-color: rgba(242, 242, 242, 0.5);
+	height: 48px;
+	width: 100%;
+	position: sticky;
+	top: 0px;
+	filter: drop-shadow(0px 2px 10px rgba(0, 0, 0, 0.1));
+	overflow:auto;
+}
+
+/* Navbar links */
+
+.container-items{
+	margin-left:5%;
+	margin-right:5%;
+	height:48px;
+	justify-content:space-between;
+	align-items:center;
+	display:flex;
+}
+
+.li-container {
+	list-style-type:none;
+}
+
+.container-teks {
+	color:white;
+	text-decoration:none;
+}
+
+/**/
+
+.content-1-judul {
+	padding: 24px;
+}
+
+.content-1-judul h1{
+	text-align: center;
+
+	font-family: Inter;
+	font-weight: 700;
+	font-size: 48px;
+	/* identical to box height */
+	background: linear-gradient(180deg, rgba(242, 242, 242, 0.9) -75%, #FFFFFF 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+	text-fill-color: transparent;
+}
+
+.content-1-profil {
+	margin-top:48px;
+	margin-bottom:48px;
+	margin-left: 15%;
+	margin-right:15%;
+	height:348px;
+	display:flex;
+	justify-content:space-around;
+	align-items: center;
+	position:relative;
+
+}
+
+.kotak{
+	z-index:10;
+	width:287.1px;
+	height:96px;
+	background-color:#DCEBF6;
+	border-radius:10px;
+	box-shadow: 1px 2px 8px rgba(0, 0, 0, 0.2);
+	position:relative;
+}
+
+.isi {
+	padding-top:8px;
+	padding-left:8px;
+	position:relative;
+	z-index:999;
+}
+
+.bulat{
+	width:192px;
+	height:192px;
+	background-color: #3E92CC;
+	border-radius: 50%;
+	position:static;
+	z-index: 1;
+	display:flex;
+	justify-content: center;
+	align-items: flex-end;
+}
+
+.profil-img-elsam:hover{
+	width: 100%;
+}
+
+h3{
+	font-weight: 600;
+	font-size: 18px;
+}
+h6{
+	font-weight: 400;
+	font-size:16px;
+}
+
+.content-2 {
+	margin-top:48px;
+	margin-bottom:48px;
+	margin-left:15%;
+	margin-right:15%;
+	height:450px;
+	display:flex;
+	justify-content: center;
+	align-items:center;
+}
+
+.box-masukan {
+	width:80%;
+	height:128px;
+	background-color:white;
+	border-radius:20px;
+	align-content:center;
+}
+
+.masukan-teks {
+	margin-top:16px;
+	margin-left:24px;
+}
+.rate {
+    float: left;
+    height: 32px;
+    margin-left:24px;
+}
+.rate:not(:checked) > input {
+    position:absolute;
+    top:-9999px;
+}
+.rate:not(:checked) > label {
+    float:right;
+    width:1em;
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    font-size:30px;
+    color:#ccc;
+}
+.rate:not(:checked) > label:before {
+    content: '★ ';
+}
+.rate > input:checked ~ label {
+    color: #ffc700;    
+}
+.rate:not(:checked) > label:hover,
+.rate:not(:checked) > label:hover ~ label {
+    color: #deb217;  
+}
+.rate > input:checked + label:hover,
+.rate > input:checked + label:hover ~ label,
+.rate > input:checked ~ label:hover,
+.rate > input:checked ~ label:hover ~ label,
+.rate > label:hover ~ input:checked ~ label {
+    color: #c59b08;
+}
+
+.masukan-input{
+	margin-top: 10px;
+	margin-left: 24px;
+	border: none;
+	border-bottom:2px solid #18435A;
+	height:16px;
+	width:75%;
+	outline:none;
+}
+
+.kirim {
+	float: right;
+	margin-right: 24px;
+	padding-top: 8px;
+	padding-bottom: 8px;
+	padding-right: 20px;
+	padding-left:20px;
+	background-color: #49CC3E;
+	border-radius: 10px;
+	border:none;
+	cursor: pointer;
+	
+}
+
+.kirim-teks {
+	color: white;
+}
+
+.kirim:hover {
+	background-color: #3AA332;
+}
+
+#profil-img {
+	width:65%;
+	margin-left: 46.24px;
+	margin-right: 46.24px;
+	margin-bottom: -10px;
+	-webkit-filter: grayscale(90%);
+	filter: grayscale(90%);
+	cursor: pointer;
+}
+
+#profil-img:hover {
+	width: 75%;
+	margin-left: 31.88px;
+	margin-right: 31.88px;
+	-webkit-filter: grayscale(0%);
+	filter: grayscale(0%);
+}
+
+.footer {
+	width : 100%;
+	height : 48px;
+	background-color: #628FB2;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.copyright {
+	color: white;
+	font-size:12px;
+	font-weight:400;
+	opacity: 0.8;
+}
