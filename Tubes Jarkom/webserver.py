@@ -9,7 +9,7 @@ serverSocket.bind(('', serverPort))  # Mengikat port ke soket
 serverSocket.listen(1)  # Menunggu request
 print("Ready to serve . . .")
 
-# Dictionary mapping file extensions to content types
+#membuat tipe http agar bisa dipanggil
 content_types = {
     "html": "text/html",
     "css" : "text/css"
@@ -26,7 +26,7 @@ while True:
         outputdata = f.read()
 
         print("File found.")
-        # Membuat header bahwa file telah ditemukan dan mengirim file
+        # Membuat header bahwa file telah ditemukan dan mengirim file ke klient
         extension = os.path.splitext(filename)[1][1:].lower()
         content_type = content_types.get(extension, "application/octet-stream")
         header = "HTTP/1.1 200 OK\r\nContent-Type: {}\r\n\r\n".format(content_type)
@@ -44,7 +44,7 @@ while True:
         connectionSocket.send(response1)
 
         # Mencari file error dan mengirim file error
-        ferr = open("404.html", 'r')
+        ferr = open("404.html", 'rb')
         outputerr = ferr.read()
         ferr.close()
 
