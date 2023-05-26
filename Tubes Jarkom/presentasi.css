@@ -239,3 +239,23 @@ h6{
 	font-weight:400;
 	opacity: 0.8;
 }
+
+.more-button {
+	font-size: 11px;
+	color: white;
+	position: absolute;
+	background-color: #01578a;
+	text-decoration: none;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left: 11px;
+	padding-right:11px;
+	border-radius: 8px;
+	cursor: pointer;
+	top: 64px;
+	left: 228px;
+}
+
+.more-button:hover {
+	background-color: #093341;
+}
