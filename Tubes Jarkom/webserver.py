@@ -39,19 +39,16 @@ while True:
         connectionSocket.close()        # Menutup koneksi soket connectionSocket
 
     except IOError:                                                             # Menjalankan code jika codingan pada blok try error (jika file tidak ditemukan)
-        # Membuat header error
-        error = "HTTP/1.1 404 Not Found\r\nContent-Type: text/html\r\n\r\n"     # Membuat string error yang akan menjadi header respons HTTP dalam kasus file tidak ditemukan
-        response1 = error.encode()                                              # Mengubah string error menjadi bentuk byte menggunakan metode encode()
-        connectionSocket.send(response1)                                        # Mengirimkan respons HTTP yang berisi header error ke connectionSocket yang merupakan socket koneksi dengan klien
+        print("File is not found") #jika file tidak ada
+        #membuat header error
+        error = "HTTP/1.1 404 Not Found\r\n"
+        content = "Content-Type: text/html\r\n\r\n" #membuat kontent http dengan tipe mime text/html
+        with open("404.html", "rb") as file:  #jika file tidak ada, kita menggunakan file 404.html
+            outputer = file.read() #membaca kontent
+        response1 = error + content + outputer.decode() #Menggabungkan string header error + content dengan outputer yang akan dikirim sebagai respons HTTP
+        connectionSocket.send(response1.encode())        #mengirim responsi file error
+        connectionSocket.close()    #menutup koneksi
 
-        # Mencari file error dan mengirim file error
-        ferr = open("404.html", 'rb')                                            # Membuka file "404.html" dalam mode baca ('r')
-        outputerr = ferr.read()                                                 # Membaca seluruh isi file yang dibuka (ferr) dan menyimpannya dalam variabel outputerr
-        ferr.close()                                                            # Menutup file yang telah dibuka (ferr)
-
-        # Memutuskan koneksi
-        print("Error message sent.")                                            # Mencetak pesan "Error message sent."
-        connectionSocket.close()                                                # Menutup koneksi soket ConnectionSocket
 
 # Tutup aplikasi
 serverSocket.close()    # Menutup koneksi soket serverSocket
